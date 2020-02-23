@@ -1,0 +1,41 @@
+1.Structure
+  เป็นข้อมูลที่ออกแบบมาเก็บข้อมูล โดย ข้อมูลเชื่อมต่อกันเป็นสาย เพื่อเข้าถึงข้อมูลแต่ละตัว
+  #Structure
+     struct student {
+     char id[12];
+     char name[40];
+     int age;
+     };
+  #การประกาศ ตัวแปร struct student std;
+  #การเข้าถึง ใช้ dot operator
+  เช่น printf("%s\n", std.name);
+      std.age = 21;
+  #ตัวแปร pointer ไปยัง Structure
+         struct student std, *p_std;
+         p_std = &std;
+         printf("%s\n", (*p_std).name);
+         (*p_std).age = 21;    
+  #การใช้typedef
+  typedef unsigned long int ulint; กำหนดประเภทข้อมูล
+  
+#####################################################################  
+
+2.การเก็บข้อมูล เข้าถึงข้อมูลใน linked list
+  node ใช้แทนหน่วยเพื่อเก็บข้อมูล 1 หน่วย
+  ใช้เก็บข้อมูล
+  first = (struct node *)malloc(sizeof(struct node));
+  second = (struct node *)malloc(sizeof(struct node));
+  third = (struct node *)malloc(sizeof(struct node));
+  การเพื่มข้อมูล insertion
+  struct node *new_node = (struct node *)malloc(sizeof(struct node));
+  new_node->data = new_data;
+  new_node->next = *head_ref;
+  การลบข้อมูล
+  *head_ref = new_node;
+  struct node* tmp = *head_ref, *prev;
+  if (tmp != NULL && tmp->data == key) {
+  *head_ref = tmp->next;
+  free(tmp);
+  return;
+
+  #####################################################################  
