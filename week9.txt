@@ -1,0 +1,49 @@
+1.Struct
+  เป็น Array ที่เก็บค่าได้หลายประเภท
+  เช่น Struct S{
+      int a;
+      char b;
+  }
+
+#####################################################################
+
+
+2.การปริ้นค่าของ Struct
+  เช่น 
+  int main()
+  {
+  struct Box b, c;
+  b.width = 5; b.length=1; b.height = 2;
+  c = b; // copies all elements elements of b to c
+  printf(“%d %d %d\n”, c.width, c.length, c.height);
+  }
+
+#####################################################################
+
+
+3.Arrays of Structures  
+  การสร้าง Array ใน Struct
+  เช่น
+  struct entry {
+  char fname [10] ;
+  char lname [12] ;
+  char phone [8] ;
+  } ;
+  struct entry list [1000];
+
+#####################################################################
+
+
+4.Pointers to Structures
+  การใช้ pointer กับ Struct
+  เช่น
+  struct part {
+  float price ;
+  char name [10] ;
+  } ;
+  struct part *p , thing;
+  p = &thing;
+  /* The following three statements are equivalent */
+  thing.price = 50;
+  (*p).price = 50; /* () around *p is needed */
+  p -> price = 50;
